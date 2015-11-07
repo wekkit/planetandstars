@@ -1,0 +1,49 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body
+{
+	background-color:#f8f8f8;
+	height: 100%;
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	color:#fff;
+}
+
+#three {
+	position: absolute;
+}
+
+#two {
+	position: absolute;
+}
+
+#info {
+	position: absolute;
+	left: 10%;
+	top:35%;
+	width: 80%;
+	height: 30%;
+	background-color:#555;
+	border-radius: 12px;
+}
+
+h1 {
+	margin-top:30px;
+	font-size: 48px;
+}
+
+h2 {
+	color: #ccc;
+	font-size: 18px;
+	margin-bottom: 90px;
+}
+
+p {
+	margin: 0 auto;
+	margin-left: 80px;
+	margin-right: 80px;
+}
