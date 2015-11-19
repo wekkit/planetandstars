@@ -127,7 +127,7 @@ button2._renderer.elem.addEventListener('click', function(){ //toggle visibility
 //  ANIMATION
 //---------------------------------------
 
-function render (){ //render at 60fps
+function render (){ //render each frame at 60fps
   var vertices = mesh2.geometry.vertices;
   geometry2.verticesNeedUpdate = true;
   geometry2.dynamic = true;
@@ -186,4 +186,3 @@ $(document).ready(function() {
         renderer.render(scene, camera);
     });
 });
-

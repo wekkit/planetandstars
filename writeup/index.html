@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+		<title>NM2207: PLANET/STARS writeup</title>
+        <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+        <script src="./jslibs/two.js"></script>
+        <script src="./jslibs/three.min.js"></script>   
+		<script src="./jslibs/jquery-1.11.3.min.js"></script>	
+        <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+		<div>
+            <h1>PLANET AND STARS  <a href="http://wekkit.github.io/planetandstars">>></a></h1>
+            <h2>A project for NM2207: Computational Media Literacy</h2>
+            <p>I designed an interactive animation that made use of a 3D visualisation javascript library called three.js to render a three-dimensional model and lets users leverage three-dimensional movement to rotate the model using the orientation of a mobile device through javascript. When the main screen is pressed, the planet model transforms into a star field that is also responsible to device orientation and returns when the screen is pressed again.<br><br>
+
+The app was created using several javascript libraries - two.js for drawing buttons and sensing for user input, three.js for rendering 3-dimensional models, and jQuery to hide/show divs. two.js and three.js are javascript libraries for generating animated graphics in 2 dimensions and 3 dimensions respectively.<br><br>
+
+The app has 4 main divs in the HTML file. The top div covers the entire app if the device is not mobile. The main part of the app is made of 2 divs. The top div is a fullscreen canvas with an instance of two.js drawing a transparent panel over the entire screen, with a button on the top-right corner to show the information div when clicked. A div underneath shows the 3D animations. One more div shows some info about the project, which is hidden until the user clicks a button on the top right corner. This div (info) is hidden by default, and shown using a variable (info) in the main javascript file.<br><br>
+
+The app was made to be mobile-only, so I created a div (notMobile) in the HTML file that would cover the entire app and inform users that the app was accessible only on mobile. In the main javascript file, I created a variable (isMobile) that would track if the device was a desktop or mobile device, which defaulted to false. A line of code checked If the device was a mobile device (found on Stack Overflow) and would set the variable to true if it was, and if the variable was set to true, then the div would be hidden using jQuery, which I learned about using the W3Schools tutorial.<br><br>
+
+Two.js is a javascript library that I learned about when researching alternative libraries to raphael.js for creating 2D animations. two.js and three.js are able to utilise WebGL, something that I was not aware raphael.js is capable of, so I decided to use it instead of raphael.js. The usage of two.js is similar to raphael.js, with functions drawing shapes on the canvas, and allowing for interactivity by applying event listeners to the elements. Most of the things I needed to know were found on the two.js documentation, which included a comprehensive tutorial on how to get started. <br><br>
+
+The three-dimensional rendering was an interesting challenge. The principles of generating elements on the canvas were somewhat similar to two.js and raphael.js, with the added challenge of 3-dimensional space (a z-axis) as well. Every element had a geometry (such as a cube or a sphere) and a material. I learned a lot about three.js and how it was used using the three.js documentation, as well as a series of random tutorials found online on starting out with three.js.<br><br>
+
+There were 3 elements in the 3-dimensional space. Firstly, the background was essentially an extremely large cube put far in the distance. The material of the cube was a basic color, and the color of this material (i.e. the cube) would be the background color of the entire canvas. There is a main sphere in the middle of the canvas, which is made of a material called points. This material essentially turns each point on the sphere into a square point called a vertex and stores the information for all the vertices in an array. I was able to manipulate the behaviour of these vertices based on what I learned about arrays in class. The final sphere was small and invisible and used as a tracker - the behaviour of the animation on the app would change based on the position of the tracker sphere.<br><br>
+
+Pressing on the screen would activate the movement of the tracker sphere, which would move from the bottom of the sphere to the top. If any of the vertices were below the tracker sphere on the y-axis, they would move randomly in all directions on every frame. If the tracker sphere went past a threshold near the top of the sphere (y=25), it would trigger the transformation of the 'planet' state into the 'stars' state. What would happen at this stage would be that the vertices would stop 'vibrating' in random directions, the scale of the entire sphere would expand, and the colors of the point and basic materials would invert. Pressing on the screen again would send the tracker sphere back to its original position, wherein the sphere would return to the 'planet' state after the sphere went below 25 on the y-axis. <br><br>
+
+The usage of mobile device orientation to rotate the main sphere was something that I learned in class, applied to the rotations of the x and z axes of the main sphere in the app. </p>
+<h2 ><a href="http://wekkit.github.io"><<</a></h2>
+        </div>
+		<script src="./appscripts/main.js"></script>
+    </body>
+
+</html>
+
